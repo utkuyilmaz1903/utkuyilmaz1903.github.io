@@ -1,9 +1,7 @@
-+++
-title = "The Illusion of Uniformity"
-tags = ["scientific-computing", "julia", "sciml", "pde"]
-hasmath = true
-hascode = true
-+++
+@def title = "The Illusion of Uniformity"
+@def tags = ["scientific-computing", "julia", "sciml", "pde"]
+@def hasmath = true
+@def hascode = true
 
 # The Illusion of Uniformity: The Need for Non-Uniform Grids and Dispatch Architecture in High-Order PDE Schemes
 
@@ -11,7 +9,7 @@ Finite difference discretization is a cornerstone of numerical PDE solving. For 
 
 In such models, to increase solution accuracy and prevent computational waste, we need non-uniform grids where node points are clustered specifically towards the boundaries where the physical event occurs.
 
-![](/_assets/grid_comparison.png)
+![](/assets/grid_comparison.png)
 
 ## 1. Clustered Grids and the Stability Penalty
 
@@ -30,7 +28,7 @@ When using `MethodOfLines.jl` (MOL) to solve these challenging problems, we can 
 
 The root cause of this situation is that the existing mathematical operators for high-order schemes are defined assuming a scalar $\Delta x$ spacing. When the system is fed an `AbstractVector` (a grid array with variable steps), the current `DiscreteSpace` generator cannot handle this state, and the operators remain fundamentally undefined.
 
-![](/_assets/weno_necessity.png)
+![](/assets/weno_necessity.png)
 
 ## 3. Comprehensive Vision and WENO Mathematics
 
