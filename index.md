@@ -1,6 +1,7 @@
 @def title = "The Illusion of Uniformity"
 @def tags = ["scientific-computing", "julia", "sciml", "pde"]
 @def hasmath = true
+@def hascode = true
 
 # The Illusion of Uniformity: The Need for Non-Uniform Grids and Dispatch Architecture in High-Order PDE Schemes
 
