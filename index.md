@@ -11,14 +11,14 @@ Finite difference discretization is a cornerstone of numerical PDE solving. For 
 
 In such models, to increase solution accuracy and prevent computational waste, we need non-uniform grids where node points are clustered specifically towards the boundaries where the physical event occurs.
 
-\fig{/assets/grid_comparison.png}
+![](/assets/grid_comparison.png)
 
 ## 1. Clustered Grids and the Stability Penalty
 
 Clustering a grid into a specific region is not just a geometric operation; it directly impacts the stability limits of the differential equation. When we cluster points, the local grid spacing ($\Delta x$) suddenly shrinks. 
 
 Considering the standard CFL (Courant-Friedrichs-Lewy) stability condition for diffusion equations:
-\[ \Delta t \le \frac{(\Delta x)^2}{2\alpha} \nonumber \]
+\[ \Delta t \le \frac{(\Delta x)^2}{2\alpha} \]
 
 This equation reveals a harsh reality: as the $\Delta x$ value decreases, the time step ($\Delta t$) must drop quadratically to microscopic levels for the system to remain stable. The fact that explicit solvers get choked at these microscopic time steps is the greatest proof of why we directly need the powerful implicit solvers and flexible discretization infrastructures present in the SciML ecosystem.
 
@@ -30,7 +30,7 @@ When using `MethodOfLines.jl` (MOL) to solve these challenging problems, we can 
 
 The root cause of this situation is that the existing mathematical operators for high-order schemes are defined assuming a scalar $\Delta x$ spacing. When the system is fed an `AbstractVector` (a grid array with variable steps), the current `DiscreteSpace` generator cannot handle this state, and the operators remain fundamentally undefined.
 
-\fig{/assets/weno_necessity_real.png}
+![](/assets/weno_necessity_real.png)
 
 ## 3. Comprehensive Vision and WENO Mathematics
 
@@ -40,19 +40,19 @@ Specifically, in the most challenging part of the systemâ€”the WENO integrationâ
 
 **Step A: Dynamic Smoothness Indicators ($\beta$)**
 Classic WENO uses constant fractions like $\frac{13}{12}$ optimized for uniform spacing. On non-uniform grids, these constants are invalid. As a solution, drawing from established literature (Shu, 1998), we will dynamically derive the smoothness indicators on-the-fly using Lagrange interpolation over local geometric distances ($h$):
-\[ \beta = \int_{x_L}^{x_R} (P'(x))^2 dx + \int_{x_L}^{x_R} (P''(x))^2 dx \nonumber \]
+\[ \beta = \int_{x_L}^{x_R} (P'(x))^2 dx + \int_{x_L}^{x_R} (P''(x))^2 dx \]
 
 **Step B: Negative Weight Regularization (Shi-Hu-Shu Splitting)**
 On highly stretched grids, the Fornberg algorithm can produce negative linear weights ($d_k$) within the stencil. This causes WENO to risk division by zero and collapses the Partition of Unity rule.
 To prevent this, we apply the Shi-Hu-Shu (2002) approach, splitting the weights into two strictly positive sub-groups:
-\[ \tilde{d}_k^+ = \frac{1}{2} (d_k + 3|d_k|) \quad \text{and} \quad \tilde{d}_k^- = \tilde{d}_k^+ - d_k \nonumber \]
+\[ \tilde{d}_k^+ = \frac{1}{2} (d_k + 3|d_k|) \quad \text{and} \quad \tilde{d}_k^- = \tilde{d}_k^+ - d_k \]
 Thus, both groups remain safely positive ($\sigma^+ = \sum \tilde{d}_k^+$ and $\sigma^- = \sum \tilde{d}_k^-$).
 
 **Step C: Final Non-Linear Weights ($\omega$)**
 We run the standard WENO formula for these two split groups and normalize them:
-\[ \alpha_k^\pm = \frac{\tilde{d}_k^\pm}{(\epsilon + \beta_k)^2} \quad \implies \quad \omega_k^\pm = \frac{\alpha_k^\pm}{\sum \alpha_j^\pm} \nonumber \]
+\[ \alpha_k^\pm = \frac{\tilde{d}_k^\pm}{(\epsilon + \beta_k)^2} \quad \implies \quad \omega_k^\pm = \frac{\alpha_k^\pm}{\sum \alpha_j^\pm} \]
 To unify the system back into a single final derivative coefficient, we stitch the non-linear weights together:
-\[ \omega_k^{final} = \sigma^+ \cdot \omega_k^+ - \sigma^- \cdot \omega_k^- \nonumber \]
+\[ \omega_k^{final} = \sigma^+ \cdot \omega_k^+ - \sigma^- \cdot \omega_k^- \]
 This exact mathematical flow zeroes out oscillations at shockwaves while guaranteeing the stability of the system.
 
 ## 4. Architectural Routing via Multiple Dispatch
