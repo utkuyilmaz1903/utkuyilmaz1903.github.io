@@ -30,7 +30,7 @@ When using `MethodOfLines.jl` (MOL) to solve these challenging problems, we can 
 
 The root cause of this situation is that the existing mathematical operators for high-order schemes are defined assuming a scalar $\Delta x$ spacing. When the system is fed an `AbstractVector` (a grid array with variable steps), the current `DiscreteSpace` generator cannot handle this state, and the operators remain fundamentally undefined.
 
-\fig{/assets/weno_necessity.png}
+\fig{/assets/weno_necessity_real.png}
 
 ## 3. Comprehensive Vision and WENO Mathematics
 
