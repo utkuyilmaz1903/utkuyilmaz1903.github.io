@@ -61,7 +61,8 @@ To avoid disrupting the library's existing high-performance structure, the integ
 
 When the system detects a `StepRangeLen` (legacy uniform grids), it will route directly to the existing high-performance operators, ensuring zero breaking changes. However, when it detects an `AbstractVector` (non-uniform grid), it will bypass the current generic generator and directly trigger the dynamic weight calculators formulated above, which are fully isolated within the `WENO` module.
 
-*(Conclusion)*
+## Conclusion
+
 Building this infrastructure for MethodOfLines.jl will open the door to much more realistic physical simulations on irregular geometries. I will explore deeper topics, such as the formulaic derivation of dynamic smoothness indicators and how these 1D schemes will be embedded into the Multi-Dimensional architecture, in the technical blog posts I will publish in the upcoming period. 
 
 Thanks for reading.
