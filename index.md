@@ -65,3 +65,12 @@ When the system detects a `StepRangeLen` (legacy uniform grids), it will route d
 Building this infrastructure for MethodOfLines.jl will open the door to much more realistic physical simulations on irregular geometries. I will explore deeper topics, such as the formulaic derivation of dynamic smoothness indicators and how these 1D schemes will be embedded into the Multi-Dimensional architecture, in the technical blog posts I will publish in the upcoming period. 
 
 Thanks for reading.
+
+~~~
+<style>
+  .math::before, .math::after, .katex-display::before, .katex-display::after {
+      display: none !important;
+      content: none !important;
+  }
+</style>
+~~~
