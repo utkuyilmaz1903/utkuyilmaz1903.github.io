@@ -23,6 +23,25 @@
 
 <item>
   <title>
+    <![CDATA[  The Illusion of Uniformity  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/index.html </guid>
+  <description>
+    <![CDATA[  GSoC 2026 DevLog: Implementing Zero-Overhead Trait Dispatch and Non-Uniform WENO.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  More goodies  ]]>
   </title>
   <link>  </link>
