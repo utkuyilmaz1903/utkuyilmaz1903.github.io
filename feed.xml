@@ -23,25 +23,6 @@
 
 <item>
   <title>
-    <![CDATA[  GSoC 2026 Kick-off  ]]>
-  </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/kickoff/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/kickoff/index.html </guid>
-  <description>
-    <![CDATA[  GSoC 2026 Official Kick-off: Implementing Zero-Overhead Trait Dispatch and Non-Uniform WENO.  ]]>
-  </description>  
-    
-  <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Utku Yılmaz</atom:name>
-  </atom:author>
-        
-</item>
-
-<item>
-  <title>
     <![CDATA[  The Illusion of Uniformity  ]]>
   </title>
   <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
