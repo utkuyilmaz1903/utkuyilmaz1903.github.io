@@ -14,7 +14,7 @@ rss_description = "Implementing Zero-Overhead Trait Dispatch and Non-Uniform WEN
 I am **Utku Yılmaz**, a second-year Computer Engineering student at Muğla 
 Sıtkı Koçman University. I am super excited to announce that I have been 
 accepted into **Google Summer of Code (GSoC) 2026**! This summer, I will 
-be working with the incredible **NumFOCUS / SciML** organization on the 
+be working with the **NumFOCUS / SciML** organization on the 
 project: **Comprehensive Non-Uniform Grid Support for MethodOfLines.jl**.
 
 You can view my full accepted project proposal, supplementary materials, 
