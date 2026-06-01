@@ -42,6 +42,25 @@
 
 <item>
   <title>
+    <![CDATA[  Deriving Non-Uniform Smoothness Indicators  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html </guid>
+  <description>
+    <![CDATA[  Mathematical derivation of WENO smoothness indicators for variable grid spacing using Lagrange interpolation.  ]]>
+  </description>  
+    
+  <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  GSoC 2026 Kick-off  ]]>
   </title>
   <link> https://tlienart.github.io/FranklinTemplates.jl/kickoff/index.html </link>
