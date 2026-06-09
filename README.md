@@ -3,7 +3,10 @@
 Welcome to the source repository of my personal website and developer blog, built with [Franklin.jl](https://franklinjl.org/) and the Julia programming language.
 
 🌐 **Visit the site:** [https://utkuyilmaz1903.github.io/](https://utkuyilmaz1903.github.io/)
-🚀 **Latest GSoC Post:** [GSoC 2026 Kick-off Roadmap](https://utkuyilmaz1903.github.io/kickoff/)
+
+### 📝 Recent Posts
+* 🚀 **[Deriving Non-Uniform Smoothness Indicators (k) for WENO](https://utkuyilmaz1903.github.io/weno-smoothness/)** *(Latest)*
+* 📌 **[GSoC 2026 Kick-off Roadmap](https://utkuyilmaz1903.github.io/kickoff/)**
 
 ### About This Space
 I use this space as a digital notebook to document my **Google Summer of Code (GSoC) 2026** journey with **NumFOCUS / SciML** and to share my research and implementation notes.
