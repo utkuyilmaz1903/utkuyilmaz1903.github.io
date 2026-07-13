@@ -9,7 +9,7 @@ rss_title = "Non-Uniform Boundaries for WENO-5"
 rss_description = "A deep dive into the mathematical and architectural implementation of non-uniform WENO-5 boundary conditions in MethodOfLines.jl."
 +++
 
-# Handling Non-Uniform Boundaries for WENO-5 in Multi-Dimensional PDEs
+# Handling Non-Uniform Boundaries for WENO-5
 
 In our previous explorations of the WENO-5 scheme for `MethodOfLines.jl`, we tackled the challenge of deriving dynamic smoothness indicators for non-uniform grids. But there is a glaring physical reality we must confront: What happens when our grid hits a wall?
 
@@ -79,18 +79,6 @@ To avoid any runtime allocations, we bake these Fornberg calculations directly i
 
 Now we have our custom-shifted cell and the dynamic Fornberg weights to compute derivatives at its boundaries. In the next step, we will use these tools to solve one of the biggest headaches of non-uniform grids: **Ideal Weights**.
 
-### Dynamic Derivatives with Fornberg Weights
-
-We have secured the left boundary ($x_L$), the right boundary ($x_{ph}$), and the midpoint ($x_M$) of our integration cell. To run the Simpson quadrature, we need to compute the first and second derivatives at these exact points.
-
-Because we are on a non-uniform grid, the $\Delta x$ distances are constantly changing. We cannot use fixed, pre-calculated coefficients for our derivatives. Instead, we must generate them dynamically on the fly. To do this, we bring in Bengt Fornberg's (1988) algorithm.
-
-We pass our 3-point sub-stencil and our current evaluation point ($x_t$) into the `_fornberg3_weights` function. It gives us the exact 0th, 1st, and 2nd derivative operator weights aligned perfectly for that specific point.
-
-To avoid any runtime allocations, we bake these Fornberg calculations directly into the CPU cache using the `@inline` macro and `StaticArrays` (`SVector{3}`).
-
-Now we have our custom-shifted cell and the dynamic Fornberg weights to compute derivatives at its boundaries. In the next step, we will use these tools to solve one of the biggest headaches of non-uniform grids: **Ideal Weights**.
-
 ## 3. The Ideal Weights and the Negative Weight Crisis
 
 Once we have our three 3-point sub-stencil derivatives, we need to combine them. In a perfectly smooth region, WENO should combine these three 3-point stencils to perfectly recreate the accuracy of a full 5-point Lagrange derivative ($P'_{5pt}$). 
@@ -147,7 +135,7 @@ To prevent this, the entire `_weno_f_nonuniform_core` is architected for zero al
 *   **Compile-Time Dispatch:** By passing `Val{1}` through `Val{5}`, the Julia compiler hardcodes the specific geometry and ideal weight formulas for that exact boundary. The compiler eliminates the code for the boundaries we aren't using.
 *   **Static Structures:** We strictly use `NTuple` and `SVector` from `StaticArrays.jl`. 
 *   **Branchless Logic:** We replace standard `max` and conditional checks with `IfElse.ifelse` to keep the code branchless and GPU-friendly.
-*   **Type Stability & AD Compatibility:** In the SciML ecosystem, a solver's worst enemy is code that breaks Automatic Differentiation (AD). Users constantly ask: *"Will this break my neural network or optimization loop?"* To guarantee it doesn't, we engineered the core to be strictly type-stable. By resolving all types correctly and propagating them smoothly, our boundary scheme natively supports `Float32`, `Float64`, `ForwardDiff.Dual`, and even `Symbolics.Num`. You can differentiate straight through the non-uniform boundaries without a single crash.
+*   **Type Stability & AD Compatibility:** Due to the nature of the SciML ecosystem, it is highly critical that our code works seamlessly with Automatic Differentiation (AD). To ensure users can safely run their optimization loops or machine learning models, we took care to design the core to be fully type-stable. By ensuring all types are resolved and propagated correctly, our boundary scheme natively supports types like `Float32`, `Float64`, `ForwardDiff.Dual`, and `Symbolics.Num` without any issues.
 
 The result is a unified, 4th-order accurate, non-uniform WENO-5 boundary reconstruction scheme that allocates exactly 0 bytes during the solver loop. No ghost nodes, no mathematical gaps, and no performance compromises.
 
@@ -161,13 +149,13 @@ During the discretization phase, an internal routing mechanism (`get_f_and_taps`
 
 Because our core ignores uniform $dx$ assumptions and relies strictly on the raw $x$ coordinates, it blindly and efficiently computes the one-sided derivative for that specific slice. This separation of concerns means we didn't have to write messy "corner-case" logic for 2D or 3D boundaries. The 1D core handles the raw math, and the library handles the spatial routing.
 
-## 6. The Chain of Proof: How We Know It Works
+## 6. Verification: How We Know It Works
 
-In scientific computing, we don't just trust heavy algebra—we verify it. To ensure that our pipeline (Fornberg $\rightarrow$ Simpson $\beta$ $\rightarrow$ Shifted Ideal Weights $\rightarrow$ Shi-Hu-Shu Splitting) is mathematically flawless, we built a rigorous chain of evidence in our test suite:
+In scientific computing, it is not enough for heavy algebra to work on paper; we must verify it through tests. To ensure our pipeline (Fornberg $\rightarrow$ Simpson $\beta$ $\rightarrow$ Shifted Ideal Weights $\rightarrow$ Shi-Hu-Shu Splitting) behaves as expected, we check the following fundamental criteria in our test suite:
 
-1.  **Convexity Guaranteed:** We strictly assert that our dynamically generated ideal weights always sum to 1 ($\sum d_k = 1$) across all targets (`Val{1}` through `Val{5}`) and on severely stretched grids.
-2.  **Polynomial Exactness:** We mathematically verify that the scheme perfectly reconstructs polynomials up to degree 2. This proves that our positive/negative weight splitting successfully handles instabilities without destroying the linear backbone of the scheme.
-3.  **4th-Order Convergence:** We don't just claim 4th-order accuracy on non-uniform grids; we prove it. Using the Method of Manufactured Solutions (MMS), our tests confirm that the scheme consistently achieves its theoretical order of convergence (`orders > 3.85`) even when the grid spacing is aggressively variable.
+1.  **Convexity Check:** We test that our dynamically generated ideal weights always sum to 1 ($\sum d_k = 1$) across all targets (`Val{1}` through `Val{5}`), even on variably spaced grids.
+2.  **Polynomial Exactness:** We verify that the scheme can flawlessly reconstruct polynomials up to degree 2. This ensures that our positive/negative weight splitting operation does not destroy the linear backbone of the scheme.
+3.  **4th-Order Convergence:** As a natural result of our formulation and the verified polynomial exactness, we observe in our base integrations that the scheme achieves its theoretically expected 4th-order convergence, even on non-uniform grids.
 
 ## Wrapping Up: Try It Yourself
 
