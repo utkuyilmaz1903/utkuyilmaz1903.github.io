@@ -23,6 +23,25 @@
 
 <item>
   <title>
+    <![CDATA[  Non-Uniform Boundaries for WENO-5  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </guid>
+  <description>
+    <![CDATA[  A deep dive into the mathematical and architectural implementation of non-uniform WENO-5 boundary conditions in MethodOfLines.jl.  ]]>
+  </description>  
+    
+  <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  Deriving Non-Uniform Smoothness Indicators  ]]>
   </title>
   <link> https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html </link>

@@ -23,6 +23,25 @@
 
 <item>
   <title>
+    <![CDATA[  Non-Uniform Boundaries for WENO-5  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </guid>
+  <description>
+    <![CDATA[  A deep dive into the mathematical and architectural implementation of non-uniform WENO-5 boundary conditions in MethodOfLines.jl.  ]]>
+  </description>  
+    
+  <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  The Illusion of Uniformity  ]]>
   </title>
   <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
@@ -31,7 +50,7 @@
     <![CDATA[  GSoC 2026 DevLog: Implementing Zero-Overhead Trait Dispatch and Non-Uniform WENO.  ]]>
   </description>  
     
-  <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>  
+  <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
