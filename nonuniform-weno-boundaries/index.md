@@ -1,5 +1,5 @@
 +++
-title = "Handling Non-Uniform Boundaries for WENO-5 in Multi-Dimensional PDEs"
+title = "Handling Non-Uniform Boundaries for WENO-5"
 description = "Architecting zero-allocation, ghost-node-free boundary conditions for non-uniform WENO-5 using compile-time dispatch."
 tags = ["gsoc", "julia", "sciml", "pde", "weno", "math"]
 hasmath = true
