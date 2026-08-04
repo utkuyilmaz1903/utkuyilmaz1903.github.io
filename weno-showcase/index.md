@@ -135,4 +135,4 @@ The non-uniform WENO foundation in MethodOfLines.jl is now mathematically consis
 
 The full mathematical infrastructure, implementation details, and quantitative showcase are collected in [PR #616](https://github.com/SciML/MethodOfLines.jl/pull/616).
 
-Thank you to my mentors, Chris Rackauckas and Alex Jones, for the technical direction throughout the project.
+Thank you to my mentor Chris Rackauckas for the technical direction throughout the project.
