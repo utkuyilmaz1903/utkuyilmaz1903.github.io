@@ -42,6 +42,25 @@
 
 <item>
   <title>
+    <![CDATA[  What Non-Uniform WENO Actually Buys Us  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/weno-showcase/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/weno-showcase/index.html </guid>
+  <description>
+    <![CDATA[  Two physical scenarios showing where clustered and multi-domain non-uniform WENO pays off against exact solutions.  ]]>
+  </description>  
+    
+  <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  Non-Uniform Boundaries for WENO-5  ]]>
   </title>
   <link> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </link>
