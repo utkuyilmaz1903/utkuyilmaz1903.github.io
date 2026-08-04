@@ -24,11 +24,13 @@ Earlier posts in this series derived the mathematics and built the implementatio
 @@
 
 @@summary-box
-**At a glance**
 
-- **Scenario A** — A viscous shock layer on $[-1,1]$: clustered WENO at $N=129$ beats uniform WENO at $N=257$ by roughly two orders of magnitude.
-- **Scenario B** — A compressing interfacial front across two mismatched non-uniform subdomains: machine-precision seam continuity against an exact characteristic solution.
-- **Takeaway** — Under-resolving a steep feature on a uniform grid is a failure regime, not a convergence problem. Grid design is as important as the operator.
+> **At a glance**
+>
+> - **Scenario A** — A viscous shock layer on $[-1,1]$: clustered WENO at $N=129$ beats uniform WENO at $N=257$ by roughly two orders of magnitude.
+> - **Scenario B** — A compressing interfacial front across two mismatched non-uniform subdomains: machine-precision seam continuity against an exact characteristic solution.
+> - **Takeaway** — Under-resolving a steep feature on a uniform grid is a failure regime, not a convergence problem. Grid design is as important as the operator.
+
 @@
 
 ## Introduction
@@ -72,7 +74,7 @@ The test protocol is deliberate. We initialize from the exact steady profile and
 |:---|:---|---:|
 | First-order upwind | Uniform | $N = 129$ |
 | WENO-5 | Uniform | $N = 257$ |
-| **WENO-5** | **Clustered** | **$N = 129$** |
+| **WENO-5** | **Clustered** | $N = 129$ |
 
 @@
 
@@ -125,19 +127,15 @@ The grid vector `xg` is the only non-standard input. Everything else follows the
 
 @@
 
-@@figure-block
+@@figure-img
 ![](/assets/01_layer_after_t1.png)
 @@
 
-@@figure-caption
 **Figure 1.** Profile zoom after $t = 1$. Clustered WENO with $N = 129$ tracks the exact steady state. Uniform WENO at $N = 257$ remains non-oscillatory but visibly inaccurate. First-order upwind is dominated by numerical viscosity and resolves the wrong layer width.
-@@
 
-@@table-caption
 **Table 1.** Relative $L^2$ error after $t = 1$.
-@@
 
-@@table-wrap
+@@results-table
 
 | Configuration | Relative $L^2$ error | Notes |
 | :--- | ---: | :--- |
@@ -149,16 +147,16 @@ The grid vector `xg` is the only non-standard input. Everything else follows the
 @@
 
 @@insight-box
-**Key result.** The clustered grid with **half the degrees of freedom** of the stable uniform WENO run delivers roughly two to three orders of magnitude lower error. The operator is the same; the grid design is not.
+
+> **Key result.** The clustered grid with **half the degrees of freedom** of the stable uniform WENO run delivers roughly two to three orders of magnitude lower error. The operator is the same; the grid design is not.
+
 @@
 
-@@figure-block
+@@figure-img
 ![](/assets/02_accuracy_per_grid_point.png)
 @@
 
-@@figure-caption
 **Figure 2.** Relative $L^2$ error versus grid points on a log-log scale. Clustered WENO converges cleanly across a self-similar refinement family. Uniform WENO appears as a single point at $N = 257$ because the $N = 129$ run is unstable. Upwind does not converge until $N \gtrsim 1000$, when its numerical viscosity finally drops below the physical $\nu$.
-@@
 
 ---
 
@@ -186,13 +184,11 @@ The domain is split at $x = 1/2$ into two subdomains with independently generate
 
 @@
 
-@@figure-block
+@@figure-img
 ![](/assets/03_front_compression.png)
 @@
 
-@@figure-caption
 **Figure 3.** A steep front arrives at the seam at $t \approx 0.67$, crosses onto a finer grid without a visible kink, and emerges at $t = 1.3$ twice as steep. Numerical points track the exact characteristic solution on both sides.
-@@
 
 **Against the exact solution:**
 

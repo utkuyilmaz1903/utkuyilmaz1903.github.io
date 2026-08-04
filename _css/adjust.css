@@ -139,6 +139,14 @@
 .blog-post .lead p { margin: 0; }
 
 /* ── Summary box ── */
+.blog-post .summary-box blockquote {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
 .blog-post .summary-box {
   background: #f6f7f9;
   border-left: 4px solid #2c5282;
@@ -149,28 +157,16 @@
   line-height: 1.65;
 }
 
-.blog-post .summary-box > strong:first-child,
-.blog-post .summary-box p > strong:first-child {
-  display: block;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #2c5282;
-  margin-bottom: 0.75em;
-}
-
-.blog-post .summary-box ul {
-  margin: 0;
-  padding-left: 1.25em;
-  width: 100%;
-}
-
-.blog-post .summary-box li {
-  margin-bottom: 0.6em;
+.blog-post .summary-box blockquote p,
+.blog-post .summary-box blockquote li {
   line-height: 1.6;
 }
 
-.blog-post .summary-box li:last-child { margin-bottom: 0; }
+.blog-post .summary-box blockquote ul {
+  margin: 0.5em 0 0;
+  padding-left: 1.25em;
+  width: 100%;
+}
 
 /* ── Section dividers (markdown ---) ── */
 .blog-post hr {
@@ -192,21 +188,15 @@
 }
 
 /* ── Configuration comparison table ── */
-.blog-post .config-grid {
+.blog-post .config-grid table {
   margin: 1.25em 0 1.75em;
   width: 100%;
-}
-
-.blog-post .config-grid table {
-  border-collapse: separate;
-  border-spacing: 0.6em;
-  border: none;
+  border-collapse: collapse;
 }
 
 .blog-post .config-grid th,
 .blog-post .config-grid td {
   border: 1px solid #ddd !important;
-  border-radius: 4px;
   padding: 0.75em 1em !important;
   text-align: center;
   font-size: 1rem;
@@ -220,7 +210,6 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #444;
-  border-color: #ccc !important;
 }
 
 .blog-post .config-grid tbody tr:last-child td {
@@ -245,12 +234,11 @@
 }
 
 /* ── Figures ── */
-.blog-post .figure-block {
+.blog-post .figure-img {
   margin: 2em 0 0;
-  text-align: center;
 }
 
-.blog-post .figure-block img {
+.blog-post .figure-img img {
   width: 100% !important;
   padding-left: 0 !important;
   margin: 0 auto;
@@ -260,8 +248,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.blog-post .figure-caption {
-  margin: 0.85em 0 2.5em;
+/* Caption: paragraph immediately after each figure */
+.blog-post .figure-img + p {
+  margin: 0.85em 0 2em;
   padding-top: 0.85em;
   border-top: 1px solid #e6e6e2;
   font-size: 1rem;
@@ -269,45 +258,37 @@
   color: #444;
 }
 
-.blog-post .figure-caption p { margin: 0; }
-
-.blog-post .figure-caption strong {
+.blog-post .figure-img + p strong {
   color: #2c5282;
   font-weight: 600;
 }
 
 /* ── Results table ── */
-.blog-post .table-caption {
-  margin: 0.5em 0 0.75em;
-  font-size: 1rem;
-  color: #333;
-}
-
-.blog-post .table-caption p { margin: 0; }
-
-.blog-post .table-wrap {
+.blog-post .results-table {
   overflow-x: auto;
-  margin: 0 0 1.5em;
+  margin: 0.75em 0 1.5em;
   width: 100%;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.blog-post .table-wrap table {
+.blog-post .results-table table {
+  width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
   line-height: 1.55;
+  margin: 0;
 }
 
-.blog-post .table-wrap th,
-.blog-post .table-wrap td {
+.blog-post .results-table th,
+.blog-post .results-table td {
   border: 1px solid #d4d4d0 !important;
   padding: 11px 14px !important;
   text-align: left;
   vertical-align: top;
 }
 
-.blog-post .table-wrap th {
+.blog-post .results-table th {
   background: #2c5282;
   color: #fff;
   font-weight: 600;
@@ -315,29 +296,37 @@
   border-color: #234166 !important;
 }
 
-.blog-post .table-wrap td:nth-child(2) {
+.blog-post .results-table td:nth-child(2) {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-.blog-post .table-wrap tbody tr:nth-child(even) td {
+.blog-post .results-table tbody tr:nth-child(even) td {
   background: #fafaf7;
 }
 
-.blog-post .table-wrap tbody tr:nth-child(2) td {
+.blog-post .results-table tbody tr:nth-child(2) td {
   background: #fef5f5;
   color: #8b3333;
 }
 
-.blog-post .table-wrap tbody tr:last-child td {
+.blog-post .results-table tbody tr:last-child td {
   background: #f0f7f0;
 }
 
-.blog-post .table-wrap tbody tr:last-child td:first-child {
+.blog-post .results-table tbody tr:last-child td:first-child {
   font-weight: 600;
 }
 
 /* ── Insight box ── */
+.blog-post .insight-box blockquote {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
 .blog-post .insight-box {
   background: #fffef5;
   border: 1px solid #e8dfc0;
@@ -349,22 +338,19 @@
   line-height: 1.65;
 }
 
-.blog-post .insight-box p { margin: 0; }
+.blog-post .insight-box blockquote p {
+  margin: 0;
+}
 
 .blog-post .insight-box strong {
   color: #8b6914;
 }
 
 /* ── Results checklist ── */
-.blog-post .results-checklist {
-  margin: 1em 0 2em;
-  width: 100%;
-}
-
 .blog-post .results-checklist ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1em 0 2em;
   width: 100%;
 }
 
