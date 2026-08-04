@@ -5,7 +5,8 @@ Welcome to the source repository of my personal website and developer blog, buil
 🌐 **Visit the site:** [https://utkuyilmaz1903.github.io/](https://utkuyilmaz1903.github.io/)
 
 ### 📝 Recent Posts
-* 🚀 **[Deriving Non-Uniform Smoothness Indicators (k) for WENO](https://utkuyilmaz1903.github.io/weno-smoothness/)** *(Latest)*
+* 🚀 **[Handling Non-Uniform Boundaries for WENO-5](https://utkuyilmaz1903.github.io/nonuniform-weno-boundaries/)** *(Latest)*
+* 📚 **[Deriving Non-Uniform Smoothness Indicators (k) for WENO](https://utkuyilmaz1903.github.io/weno-smoothness/)**
 * 📌 **[GSoC 2026 Kick-off Roadmap](https://utkuyilmaz1903.github.io/kickoff/)**
 
 ### About This Space
