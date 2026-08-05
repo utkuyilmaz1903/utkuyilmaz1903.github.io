@@ -230,8 +230,4 @@ The non-uniform WENO foundation in MethodOfLines.jl is now mathematically consis
 
 @@
 
-\toc
-
-@@
-
 @@
