@@ -2,32 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/weno-showcase/index.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://utkuyilmaz1903.github.io/weno-showcase/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/kickoff/index.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://utkuyilmaz1903.github.io/kickoff/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://utkuyilmaz1903.github.io/nonuniform-weno-boundaries/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://utkuyilmaz1903.github.io/weno-smoothness/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/index.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://utkuyilmaz1903.github.io/gsoc-proposal/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://utkuyilmaz1903.github.io/index.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>

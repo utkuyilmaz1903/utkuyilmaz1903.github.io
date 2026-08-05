@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Franklin Template  ]]>
+      <![CDATA[  Utku Yılmaz · GSoC 2026 DevLog  ]]>
     </title>
-    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <link> https://utkuyilmaz1903.github.io/ </link>
     <description>
-      <![CDATA[  Example website using Franklin  ]]>
+      <![CDATA[  Technical blog on non-uniform WENO-5 and MethodOfLines.jl  ]]>
     </description>
     <atom:link
-      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      href="https://utkuyilmaz1903.github.io/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Non-Uniform Boundaries for WENO-5  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/nonuniform-weno-boundaries/index.html </guid>
+  <link> https://utkuyilmaz1903.github.io/nonuniform-weno-boundaries/index.html </link>
+  <guid> https://utkuyilmaz1903.github.io/nonuniform-weno-boundaries/index.html </guid>
   <description>
     <![CDATA[  A deep dive into the mathematical and architectural implementation of non-uniform WENO-5 boundary conditions in MethodOfLines.jl.  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  Deriving Non-Uniform Smoothness Indicators  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/weno-smoothness/index.html </guid>
+  <link> https://utkuyilmaz1903.github.io/weno-smoothness/index.html </link>
+  <guid> https://utkuyilmaz1903.github.io/weno-smoothness/index.html </guid>
   <description>
     <![CDATA[  Mathematical derivation of WENO smoothness indicators for variable grid spacing using Lagrange interpolation.  ]]>
   </description>  
