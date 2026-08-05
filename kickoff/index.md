@@ -9,7 +9,17 @@ rss_title = "GSoC 2026 Kick-off"
 rss_description = "Implementing Zero-Overhead Trait Dispatch and Non-Uniform WENO."
 +++
 
+@@blog-post
+
 # Hello everyone!
+
+@@article-header
+*GSoC 2026 · MethodOfLines.jl · Kickoff*
+
+May 2026 · Project roadmap
+@@
+
+\toc
 
 I am **Utku Yılmaz**, a second-year Computer Engineering student at Muğla 
 Sıtkı Koçman University. I am super excited to announce that I have been 
@@ -107,11 +117,16 @@ to the bleeding edge of scientific machine learning.
 Feel free to drop your feedback on the SciML Slack, or track my progress directly 
 on GitHub. Let's build something great!
 
-~~~
-<style>
-  .math::before, .math::after, .katex-display::before, .katex-display::after {
-      display: none !important;
-      content: none !important;
-  }
-</style>
-~~~
+@@series-nav
+
+**GSoC 2026 series**
+
+- [Project Proposal](/gsoc-proposal/)
+- **Kickoff** *(this post)*
+- [WENO Smoothness Indicators](/weno-smoothness/)
+- [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
+- [Showcase](/weno-showcase/)
+
+@@
+
+@@

@@ -19,6 +19,8 @@ rss_description = "Two physical scenarios showing where clustered and multi-doma
 August 2026 · Quantitative showcase
 @@
 
+\toc
+
 @@lead
 Earlier posts in this series derived the mathematics and built the implementation. This final post answers a practical question: *what does that infrastructure buy in a physical simulation?*
 @@
@@ -220,10 +222,15 @@ The non-uniform WENO foundation in MethodOfLines.jl is now mathematically consis
 
 **GSoC 2026 series**
 
+- [Project Proposal](/gsoc-proposal/)
 - [Kickoff](/kickoff/)
 - [WENO Smoothness Indicators](/weno-smoothness/)
 - [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
 - **Showcase** *(this post)*
+
+@@
+
+\toc
 
 @@
 

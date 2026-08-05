@@ -9,7 +9,17 @@ rss_title = "Deriving Non-Uniform Smoothness Indicators"
 rss_description = "Mathematical derivation of WENO smoothness indicators for variable grid spacing using Lagrange interpolation."
 +++
 
+@@blog-post
+
 # Deriving Non-Uniform Smoothness Indicators ($k$) for WENO
+
+@@article-header
+*GSoC 2026 · MethodOfLines.jl · Technical DevLog*
+
+May 2026 · Smoothness indicators
+@@
+
+\toc
 
 In my GSoC 2026 project for MethodOfLines.jl, my goal is to bring native non-uniform grid support to the WENO scheme.
 
@@ -161,11 +171,16 @@ This transition from static fractions to a flexible, dynamic algebraic architect
 
 In the next technical post, I will dive into the second part of this implementation: **Dynamic Weight Calculation with Fornberg**. We will shift our focus from smoothness indicators to the core stencil weights, exploring how we can compute them on-the-fly. Stay tuned!
 
-~~~
-<style>
-  .math::before, .math::after, .katex-display::before, .katex-display::after {
-      display: none !important;
-      content: none !important;
-  }
-</style>
-~~~
+@@series-nav
+
+**GSoC 2026 series**
+
+- [Project Proposal](/gsoc-proposal/)
+- [Kickoff](/kickoff/)
+- **WENO Smoothness Indicators** *(this post)*
+- [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
+- [Showcase](/weno-showcase/)
+
+@@
+
+@@

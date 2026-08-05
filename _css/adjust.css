@@ -1,5 +1,21 @@
 /* adjustments for Franklin */
 
+:root {
+  --accent: #2c5282;
+  --accent-light: #eef3f9;
+  --accent-border: #c8d8ea;
+  --text-muted: #666;
+  --bg-subtle: #f6f7f9;
+  --border: #e2e2dc;
+}
+
+/* Global KaTeX — hide equation numbers */
+.math::before, .math::after,
+.katex-display::before, .katex-display::after {
+  display: none !important;
+  content: none !important;
+}
+
 .franklin-content code {
   font-size: var(--small);
 }
@@ -51,6 +67,17 @@
   transform: scaleX(1);
 }
 
+#menu ul li a.active {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+#menu ul li a.active::after {
+  visibility: visible;
+  transform: scaleX(1);
+  background-color: var(--accent);
+}
+
 .franklin-content { padding-left: 10%; }
 .franklin-content { padding-right: 5%; }
 
@@ -98,8 +125,6 @@
   display: none !important;
   content: none !important;
 }
-
-/* Override Tufte width constraints inside blog posts */
 .blog-post table { width: 100% !important; }
 .blog-post figure { max-width: 100% !important; }
 
@@ -450,4 +475,138 @@
     flex-direction: column;
     gap: 0.35em;
   }
+}
+
+/* ==================================================================
+   Homepage
+================================================================== */
+
+.home-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25em;
+  border-bottom: none;
+}
+
+.home-page .home-hero {
+  margin: 0 0 2.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.home-page .home-hero em {
+  display: block;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+}
+
+.home-page .home-hero p { margin: 0; }
+
+.home-page h2 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0 1.25em;
+  border-bottom: none;
+}
+
+.home-page .series-cards ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.home-page .series-cards li {
+  margin: 0 0 0.85em;
+  padding: 1em 1.25em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fafaf8;
+  line-height: 1.55;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.home-page .series-cards li:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(44, 82, 130, 0.08);
+}
+
+.home-page .series-cards li:last-child {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.home-page .series-cards a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-page .series-cards a:hover {
+  text-decoration: underline;
+}
+
+.home-page .home-footer {
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.home-page .home-footer p { margin: 0; }
+
+/* Table of contents */
+.blog-post .franklin-toc {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 1em 1.25em;
+  margin: 0 0 2em;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+  width: 100% !important;
+}
+
+.blog-post .franklin-toc ol {
+  margin: 0;
+  padding-left: 1.25em;
+  width: 100%;
+}
+
+.blog-post .franklin-toc a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.blog-post .franklin-toc a:hover {
+  text-decoration: underline;
+}
+
+/* Blog images in non-showcase posts */
+.blog-post img {
+  width: 100% !important;
+  padding-left: 0 !important;
+  margin: 1.5em auto;
+  display: block;
+  border: 1px solid #e0e0dc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Blockquote TL;DR styling in proposal */
+.blog-post blockquote {
+  background: var(--bg-subtle);
+  border-left: 4px solid var(--accent);
+  font-style: normal;
 }

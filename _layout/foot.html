@@ -7,5 +7,18 @@
     {{ if hascode }}
         {{ insert foot_highlight.html }}
     {{ end }}
+    <script>
+      (function () {
+        function norm(p) {
+          p = p.replace(/\/index\.html$/, "");
+          if (p === "" || p === "/") return "/";
+          return p.endsWith("/") ? p : p + "/";
+        }
+        var path = norm(window.location.pathname);
+        document.querySelectorAll("#menu a").forEach(function (a) {
+          if (norm(a.getAttribute("href")) === path) a.classList.add("active");
+        });
+      })();
+    </script>
   </body>
 </html>

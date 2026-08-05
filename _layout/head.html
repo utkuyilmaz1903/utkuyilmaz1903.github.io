@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{if hasmath}} {{insert head_katex.html }}     {{end}}
-    {{if hascode}} {{insert head_highlight.html }}   {{end}}
-    {{insert style.html}}
-    {{isdef title}} <title>{{fill title}}</title>  {{end}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{if hasmath}} {{insert head_katex.html }}     {{end}}
+  {{if hascode}} {{insert head_highlight.html }}   {{end}}
+  {{insert style.html}}
+  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+  {{isdef description}} <meta name="description" content="{{fill description}}"> {{end}}
+  {{isdef title}} <meta property="og:title" content="{{fill title}}"> {{end}}
+  {{isdef description}} <meta property="og:description" content="{{fill description}}"> {{end}}
+  <meta property="og:type" content="website">
 </head>
 
 <body>

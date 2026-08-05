@@ -9,7 +9,17 @@ rss_title = "Non-Uniform Boundaries for WENO-5"
 rss_description = "A deep dive into the mathematical and architectural implementation of non-uniform WENO-5 boundary conditions in MethodOfLines.jl."
 +++
 
+@@blog-post
+
 # Handling Non-Uniform Boundaries for WENO-5
+
+@@article-header
+*GSoC 2026 · MethodOfLines.jl · Technical DevLog*
+
+July 2026 · Boundary architecture
+@@
+
+\toc
 
 In our previous explorations of the WENO-5 scheme for `MethodOfLines.jl`, we tackled the challenge of deriving dynamic smoothness indicators for non-uniform grids. But there is a glaring physical reality we must confront: What happens when our grid hits a wall?
 
@@ -186,3 +196,16 @@ This dynamic approach to boundaries ensures that `MethodOfLines.jl` can handle t
 
 *This work is part of the Google Summer of Code 2026 project for SciML. You can explore the full implementation in [`nonuniform_weno.jl`](https://github.com/SciML/MethodOfLines.jl/blob/master/src/discretization/schemes/WENO/nonuniform_weno.jl).*
 
+@@series-nav
+
+**GSoC 2026 series**
+
+- [Project Proposal](/gsoc-proposal/)
+- [Kickoff](/kickoff/)
+- [WENO Smoothness Indicators](/weno-smoothness/)
+- **Non-Uniform Boundaries** *(this post)*
+- [Showcase](/weno-showcase/)
+
+@@
+
+@@
