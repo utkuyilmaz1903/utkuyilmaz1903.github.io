@@ -227,6 +227,7 @@ The non-uniform WENO foundation in MethodOfLines.jl is now mathematically consis
 - [WENO Smoothness Indicators](/weno-smoothness/)
 - [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
 - **Showcase** *(this post)*
+- [Final Work Product](/GSoC-Final-Work-Product/)
 
 @@
 

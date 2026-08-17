@@ -180,6 +180,7 @@ In the next technical post, I will dive into the second part of this implementat
 - **WENO Smoothness Indicators** *(this post)*
 - [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
 - [Showcase](/weno-showcase/)
+- [Final Work Product](/GSoC-Final-Work-Product/)
 
 @@
 

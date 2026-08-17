@@ -205,6 +205,7 @@ This dynamic approach to boundaries ensures that `MethodOfLines.jl` can handle t
 - [WENO Smoothness Indicators](/weno-smoothness/)
 - **Non-Uniform Boundaries** *(this post)*
 - [Showcase](/weno-showcase/)
+- [Final Work Product](/GSoC-Final-Work-Product/)
 
 @@
 

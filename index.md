@@ -15,6 +15,12 @@ hascode = false
 Technical devlog documenting the design and implementation of native non-uniform grid support for WENO-5 advection in [MethodOfLines.jl](https://github.com/SciML/MethodOfLines.jl).
 @@
 
+@@featured-card
+
+- **[Final Work Product](/GSoC-Final-Work-Product/)** — *August 2026* · Official GSoC submission: non-uniform WENO-5 from stencil math to tests, benchmarks, and documentation.
+
+@@
+
 ## DevLog Series
 
 @@series-cards

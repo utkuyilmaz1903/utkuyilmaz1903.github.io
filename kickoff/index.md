@@ -126,6 +126,7 @@ on GitHub. Let's build something great!
 - [WENO Smoothness Indicators](/weno-smoothness/)
 - [Non-Uniform Boundaries](/nonuniform-weno-boundaries/)
 - [Showcase](/weno-showcase/)
+- [Final Work Product](/GSoC-Final-Work-Product/)
 
 @@
 
