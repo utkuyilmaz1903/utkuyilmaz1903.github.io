@@ -27,7 +27,7 @@ August 2026 · Official submission
 
 **Project:** [MethodOfLines.jl](https://github.com/SciML/MethodOfLines.jl)
 
-**Mentors:** Chris Rackauckas
+**Mentor:** Chris Rackauckas
 @@
 
 @@lead
@@ -109,7 +109,7 @@ All work was merged into [SciML/MethodOfLines.jl](https://github.com/SciML/Metho
 @@
 
 @@ack
-Many thanks to my mentor Chris Rackauckas for their guidance throughout the summer.
+Many thanks to my mentor Chris Rackauckas for his guidance throughout the summer.
 @@
 
 @@series-nav
