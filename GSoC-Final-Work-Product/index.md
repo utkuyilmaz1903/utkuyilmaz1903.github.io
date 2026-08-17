@@ -109,7 +109,7 @@ All work was merged into [SciML/MethodOfLines.jl](https://github.com/SciML/Metho
 @@
 
 @@ack
-Many thanks to my mentors Chris Rackauckas for their guidance throughout the summer, and to the SciML community for the reviews and discussions.
+Many thanks to my mentor Chris Rackauckas for their guidance throughout the summer.
 @@
 
 @@series-nav

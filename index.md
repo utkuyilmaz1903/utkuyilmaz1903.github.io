@@ -17,7 +17,7 @@ Technical devlog documenting the design and implementation of native non-uniform
 
 @@featured-card
 
-- **[Final Work Product](/GSoC-Final-Work-Product/)** — *August 2026* · Official GSoC submission: non-uniform WENO-5 from stencil math to tests, benchmarks, and documentation.
+- **[Final Work Product](/GSoC-Final-Work-Product/)** — *August 2026* · Official GSoC Final submission
 
 @@
 
