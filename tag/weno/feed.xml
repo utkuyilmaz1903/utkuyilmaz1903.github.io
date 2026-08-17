@@ -23,6 +23,25 @@
 
 <item>
   <title>
+    <![CDATA[  GSoC 2026 Final Work Product  ]]>
+  </title>
+  <link> https://utkuyilmaz1903.github.io/GSoC-Final-Work-Product/index.html </link>
+  <guid> https://utkuyilmaz1903.github.io/GSoC-Final-Work-Product/index.html </guid>
+  <description>
+    <![CDATA[  Official GSoC 2026 final work product: native non-uniform grid support for WENO-5 in MethodOfLines.jl.  ]]>
+  </description>  
+    
+  <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Utku Yılmaz</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  What Non-Uniform WENO Actually Buys Us  ]]>
   </title>
   <link> https://utkuyilmaz1903.github.io/weno-showcase/index.html </link>
